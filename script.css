@@ -1,0 +1,32 @@
+function showPopup(show) {
+    if (show) {
+        alert("Thank you for submitting a recommendation!");
+    }
+}
+
+document.getElementById('recommendationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const nameInput = document.getElementById('recommenderName');
+    const textInput = document.getElementById('recommendationText');
+
+    const name = nameInput.value.trim();
+    const text = textInput.value.trim();
+
+    if (name && text) {
+        // Create new recommendation element
+        const newCard = document.createElement('div');
+        newCard.classList.add('recommendation-card');
+        newCard.innerHTML = `"${text}" <span>- ${name}</span>`;
+
+        // Append card to list
+        document.getElementById('recommendations-list').appendChild(newCard);
+
+        // Reset form inputs
+        nameInput.value = '';
+        textInput.value = '';
+
+        // Trigger showPopup only after valid submission
+        showPopup(true);
+    }
+});
