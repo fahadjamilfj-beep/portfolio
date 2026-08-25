@@ -1,118 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahad Jamil - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Fahad Jamil - Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="./script.js"></script>
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">
-            <a href="#about" class="home-icon">Fahad Jamil</a>
+  <!-- Navigation Bar -->
+  <nav>
+    <div id="home">
+      <div class="profile_name">
+        Fahad Jamil
+        <div class="contact_info">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Home" style="width:20px;"/>
         </div>
+      </div>
+      <div class="topdiv">
+        <a class="topmenu" href="#about-me">About Me</a>
+        <a class="topmenu" href="#skills">Skills</a>
+        <a class="topmenu" href="#projects">Project Details</a>
+        <a class="topmenu" href="#recommendations">Recommendations</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Me -->
+  <section id="about-me" class="container">
+    <div>
+      <img src="https://via.placeholder.com/150" class="profile_image"/>
+    </div>
+    <div>
+      <h1>
+        Hi, I'm Fahad Jamil! <img src="https://cdn-icons-png.flaticon.com/512/1053/1053210.png" width="30px"/>
+      </h1>
+      <p>
+        I am a passionate developer with expertise in web and mobile application development. I focus on building clean, efficient, and user-friendly applications using modern frameworks.
+      </p>
+    </div>
+  </section>
+              
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div style="clear:both;"></div>
+    <div class="all_skills">
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+        <h6>HTML5</h6>
+      </div>
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"/>
+        <h6>CSS3</h6>
+      </div>
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/>
+        <h6>JavaScript</h6>
+      </div>
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/>
+        <h6>Python</h6>
+      </div>
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"/>
+        <h6>Git</h6>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Project Details</h2>
+    <div style="clear:both;"></div>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Simple Interest Calculator</h3>
         <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Project Details</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#recommendations">Recommendations</a></li>
+          <li>Developed a script tool hosted on GitHub for computing interest calculations efficiently.</li>
         </ul>
-    </nav>
+      </div>
+      <hr>
+      <div class="project-card">
+        <h3>Flutter Mobile App</h3>
+        <ul>
+          <li>Built a responsive cross-platform mobile application with custom UI components.</li>
+        </ul>
+      </div>
+      <hr>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <ul>
+          <li>Created and published an interactive responsive portfolio page hosted on GitHub Pages.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="profile-container">
-            <img src="https://via.placeholder.com/150" alt="Fahad Jamil Profile Picture" class="profile-img">
-            <p>
-                Hi! I am <strong>Fahad Jamil</strong>, a passionate software developer specializing in web and mobile applications. 
-                I focus on building clean, scalable apps using Python, Django, Flutter, and modern web standards.
-            </p>
+  <!-- Recommendations -->
+  <section id="recommendations">
+    <h2>Recommendations</h2>
+    <div style="clear:both;"></div>
+    <div class="all_recommendations" id="all_recommendations">
+      <div class="recommendation">
+        <span>&#8220;</span>
+        Fahad is a dedicated developer who consistently delivers high-quality work on time.
+        <span>&#8221;</span>
+      </div>
+      <div class="recommendation">
+        <span>&#8220;</span>
+        A great team member with excellent technical skills and creative problem-solving abilities.
+        <span>&#8221;</span>
+      </div>
+      <div class="recommendation">
+        <span>&#8220;</span>
+        Fahad's code structure and domain knowledge in mobile/web development are exceptional.
+        <span>&#8221;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add Recommendation Form -->
+  <section id="contact">
+    <div class="flex_center">
+      <fieldset>
+        <legend class="introduction">Leave a Recommendation</legend>
+        <input type="text" placeholder="Name (Optional)" id="new_recommendation_name"><br/>
+        <textarea id="new_recommendation" cols="50" rows="5" placeholder="Write your recommendation..."></textarea>
+        <div class="flex_center">
+          <button id="recommend_btn" onclick="addRecommendation()">Submit</button>
         </div>
-    </section>
+      </fieldset>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Project Details</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Bash Interest Calculator</h3>
-                <p>A shell script program built to compute simple interest calculations based on user inputs.</p>
-            </div>
-            <div class="project-card">
-                <h3>Flutter Simple Interest App</h3>
-                <p>A cross-platform mobile utility created with Flutter for seamless calculation on Android and iOS.</p>
-            </div>
-            <div class="project-card">
-                <h3>Task Manager Dashboard</h3>
-                <p>A responsive web application designed for tracking project tasks and deadlines efficiently.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Logo">
-                <span>HTML5 & CSS3</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS Logo">
-                <span>JavaScript</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo">
-                <span>Python & Django</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter Logo">
-                <span>Flutter</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Logo">
-                <span>Git & GitHub</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Recommendations Section -->
-    <section id="recommendations">
-        <h2>Recommendations</h2>
-        <div class="recommendations-container" id="recommendations-list">
-            <div class="recommendation-card">
-                "Fahad is a dedicated developer with strong technical competence in web and mobile technologies."
-                <span>- Alex R., Team Lead</span>
-            </div>
-            <div class="recommendation-card">
-                "Working with Fahad was seamless. He delivers clean, readable code on schedule."
-                <span>- Sarah M., Project Manager</span>
-            </div>
-            <div class="recommendation-card">
-                "Fahad has impressive problem-solving abilities and strong attention to code quality."
-                <span>- David K., Peer Reviewer</span>
-            </div>
-        </div>
-
-        <div class="add-recommendation-form">
-            <h3>Leave a Recommendation</h3>
-            <form id="recommendationForm">
-                <div class="form-group">
-                    <label for="recommenderName">Your Name</label>
-                    <input type="text" id="recommenderName" required>
-                </div>
-                <div class="form-group">
-                    <label for="recommendationText">Recommendation</label>
-                    <textarea id="recommendationText" rows="4" required></textarea>
-                </div>
-                <button type="submit">Submit Recommendation</button>
-            </form>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
+  <div class="iconbutton">
+    <a href="#home">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" width="25px">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </a>
+  </div>
 </body>
 </html>
